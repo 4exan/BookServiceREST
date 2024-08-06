@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: rgb(220, 237, 209);
+  background: linear-gradient(
+    148deg,
+    rgba(220, 237, 209, 1) 0%,
+    rgba(190, 221, 190, 1) 24%,
+    rgba(231, 194, 212, 1) 100%
+  );
+}
+
+.main--panel {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 50px;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.search--panel {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  align-items: center;
+  width: 50%;
+}
+
+.book--card {
+  background-color: white;
+  position: inherit;
+  left: 20%;
+  top: 50%;
+  transform: translate(-20%, -50%);
+  height: 200px;
+  width: 250px;
+
+  border-radius: 15px;
+
+  padding: 15px;
+
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
