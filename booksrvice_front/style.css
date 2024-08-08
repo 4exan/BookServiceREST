@@ -34,25 +34,30 @@ body {
   width: 50%;
 }
 
-.book--card {
-  background-color: white;
-  position: inherit;
-  left: 20%;
-  top: 50%;
-  transform: translate(-20%, -50%);
-  height: 200px;
-  width: 250px;
-
-  border-radius: 15px;
-
-  padding: 15px;
-
-  -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
-}
-
 .center {
   align-items: center;
   text-align: center;
+  margin: 0 auto;
+}
+
+.table-container {
+  margin: 0 auto;
+}
+
+table {
+  position: inherit;
+  width: 90%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
 }
