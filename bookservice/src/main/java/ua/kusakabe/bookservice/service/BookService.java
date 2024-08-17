@@ -25,9 +25,7 @@ public class BookService {
     public Book findById(int id) {
         return bookRepository.findById(id).orElse(null);
     }
-    public Book save(Book book) {
-        return bookRepository.save(book);
-    }
+    public void save(Book book) {bookRepository.save(book);}
     public void delete(int id) {
         bookRepository.deleteById(id);
     }
