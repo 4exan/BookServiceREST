@@ -62,12 +62,12 @@ body {
   border-radius: 50px;
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
 
+.data {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
-
-  overflow: auto;
 }
 
 .grid-item {
@@ -92,6 +92,10 @@ body {
   cursor: pointer;
 }
 
+.book-list {
+  overflow: auto;
+}
+
 .item-title {
   font-size: 20px;
   margin-left: 10px;
@@ -113,4 +117,70 @@ body {
 
   margin-left: auto;
   margin-right: 5px;
+}
+
+.search-form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+
+.search-input {
+  height: 25px;
+  width: 200px;
+  border: none;
+  background-color: none;
+  border-radius: 10px 0px 0px 10px;
+  text-align: center;
+
+  font-family: "Quicksand";
+}
+
+.btn-search {
+  height: 25px;
+  width: 75px;
+  border-radius: 0px 25px 25px 0px;
+  border: none;
+  background-color: rgb(43, 141, 43);
+
+  color: aliceblue;
+
+  font-family: "Quicksand";
+
+  cursor: pointer;
+}
+
+.center {
+  position: inherit;
+  margin: auto;
+  left: 50%;
+  top: 3%;
+  transform: translate(-50%);
+}
+
+.book-detail {
+  margin: 10px;
+  overflow: auto;
+}
+
+.book-detail p {
+  font-family: "Quicksand";
+}
+
+.detail-title {
+  font-family: "Quicksand";
+  text-align: center;
+}
+
+.detail-img {
+  display: flex;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+}
+
+.selected {
+  border: 1px solid green;
 }
