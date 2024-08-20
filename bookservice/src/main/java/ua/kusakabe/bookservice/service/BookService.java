@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import ua.kusakabe.bookservice.model.Book;
 import ua.kusakabe.bookservice.repositories.BookRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,8 +32,28 @@ public class BookService {
     }
 
     public List<Book> findByPageAndSize(int page, int size){
-        List<Book> allBooks = bookRepository.findAll();
-        return allBooks.subList(page*size, (page+1)*size);
+
+        //1. Create new BookList for books on current page
+        List<Book> pageBooks = new ArrayList<>();
+        //2. Get booksById and put into new list
+        // (if page = 0 => get id from 1 to {size})
+        // (if page = 1 => get id from size to size*(page+1))
+        // (if page = 2 => get id from size*page to size*(page+1))
+        //...
+        if(page == 0){
+            for(int i = 1 ; i <= size ; i++){
+                pageBooks.add(bookRepository.findById(i).orElse(null));
+            }
+        } else if(page == 1){
+            for(int i = size ; i <= size*2 ; i++){
+                pageBooks.add(bookRepository.findById(i).orElse(null));
+            }
+        } else {
+            for (int i = size * page; i <= size * (page + 1); i++) {
+                pageBooks.add(bookRepository.findById(i).orElse(null));
+            }
+        }
+        return pageBooks;
 
 //        int startIndex = 0;
 //

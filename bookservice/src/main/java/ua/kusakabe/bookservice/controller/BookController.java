@@ -18,10 +18,11 @@ public class BookController {
 
     private final BookService bookService;
 
-    @GetMapping("/get-all")
-    public List<Book> getAll(){
-        return bookService.findAll();
-    }
+    //Commented for safety purpose
+//    @GetMapping("/get-all")
+//    public List<Book> getAll(){
+//        return bookService.findAll();
+//    }
 
     @GetMapping("/get-book")
     public List<Book> getBooksByPage(@RequestParam(defaultValue = "0") int page,
@@ -38,7 +39,7 @@ public class BookController {
     public ResponseEntity<Book> saveBook(@RequestBody Book book){
         System.out.println("Book saved");
         Book savedBook = bookService.save(book);
-        System.out.println(book.getTitle() + " " + book.getAuthor() + " " + savedBook.getTitle());
+        System.out.println(book.getBook_title() + " " + book.getBook_author());
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
     }
 }
