@@ -25,9 +25,28 @@ public class BookService {
     public Book findById(int id) {
         return bookRepository.findById(id).orElse(null);
     }
-    public void save(Book book) {bookRepository.save(book);}
+    public Book save(Book book) {return bookRepository.save(book);}
     public void delete(int id) {
         bookRepository.deleteById(id);
+    }
+
+    public List<Book> findByPageAndSize(int page, int size){
+        List<Book> allBooks = bookRepository.findAll();
+        return allBooks.subList(page*size, (page+1)*size);
+
+//        int startIndex = 0;
+//
+//        if(page==1){
+//            startIndex = size;
+//        } else {
+//            startIndex = page*size;
+//        }
+//
+//        for(int i = startIndex; i < startIndex+size; i++) {
+//
+//        }
+//
+//        return null;
     }
 
 }
