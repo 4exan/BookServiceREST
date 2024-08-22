@@ -25,7 +25,7 @@ public class BookController {
 //    }
 
     @GetMapping("/get-book")
-    public List<Book> getBooksByPage(@RequestParam(defaultValue = "0") int page,
+    public List<Book> getBooksByPage(@RequestParam(defaultValue = "1") int page,
                                                      @RequestParam(defaultValue = "20") int size) {
         return bookService.findByPageAndSize(page, size);
     }
