@@ -31,7 +31,16 @@ public class BookService {
         bookRepository.deleteById(id);
     }
 
+    public int getBookCount(){
+        return (int) bookRepository.count();
+    }
+
     public List<Book> findByPageAndSize(int page, int size){
+
+        System.out.println("Searching for book's for page " + page + " and size " + size);
+
+        int tableCount = getBookCount();
+        int index = page*size;
 
         //1. Create new BookList for books on current page
         List<Book> pageBooks = new ArrayList<>();
@@ -40,19 +49,27 @@ public class BookService {
         // (if page = 1 => get id from size to size*(page+1))
         // (if page = 2 => get id from size*page to size*(page+1))
         //...
-        if(page == 0){
-            for(int i = 1 ; i <= size ; i++){
+
+//        if(page == 1){
+//            for(int i = 1 ; i <= size ; i++){
+//                pageBooks.add(bookRepository.findById(i).orElse(null));
+//            }
+//        } else if(page == 2){
+//            for(int i = size ; i <= size*2 ; i++){
+//                pageBooks.add(bookRepository.findById(i).orElse(null));
+//            }
+//        } else {
+//            for (int i = size * page; i <= size * (page + 1); i++) {
+//                pageBooks.add(bookRepository.findById(i).orElse(null));
+//            }
+//        }
+
+        for (int i = size * page; i <= size * (page + 1); i++) {
+            if(bookRepository.findById(i).isPresent()) {
                 pageBooks.add(bookRepository.findById(i).orElse(null));
             }
-        } else if(page == 1){
-            for(int i = size ; i <= size*2 ; i++){
-                pageBooks.add(bookRepository.findById(i).orElse(null));
             }
-        } else {
-            for (int i = size * page; i <= size * (page + 1); i++) {
-                pageBooks.add(bookRepository.findById(i).orElse(null));
-            }
-        }
+
         return pageBooks;
 
 //        int startIndex = 0;
@@ -71,3 +88,4 @@ public class BookService {
     }
 
 }
+

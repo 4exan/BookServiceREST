@@ -11,6 +11,12 @@ body {
   );
 }
 
+h2 {
+  font-family: "Quicksand";
+  font-size: 30px;
+  text-align: center;
+}
+
 .navbar {
   background-color: whitesmoke;
   position: absolute;
@@ -29,9 +35,15 @@ body {
 }
 
 .btn {
-  background-color: #9bc1fa;
   border: none;
   border-radius: 15px;
+
+  transition: all 0.2ms;
+}
+
+.btn:active {
+  transform: scaleX(90%);
+  transition: all 0.5ms;
 }
 
 .login {
@@ -53,8 +65,8 @@ body {
 .main-panel {
   background-color: whitesmoke;
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 85%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -45%);
@@ -71,14 +83,21 @@ body {
 }
 
 .grid-item {
-  border: 1px, solid black;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
 
   margin: 50px;
 }
 
+.grid-title {
+  font-size: 27px;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+
 .item {
   display: flex;
-  text-align: center;
+  text-align: left;
   align-items: center;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -93,6 +112,7 @@ body {
 }
 
 .book-list {
+  height: 500px;
   overflow: auto;
 }
 
@@ -100,6 +120,7 @@ body {
   font-size: 20px;
   margin-left: 10px;
   font-weight: 500;
+  text-align: left;
 }
 
 .item-author {
@@ -132,8 +153,11 @@ body {
   width: 200px;
   border: none;
   background-color: none;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
   text-align: center;
+
+  border-top: 2px solid #00bf63;
+  border-bottom: 2px solid #00bf63;
 
   font-family: "Quicksand";
 }
@@ -143,11 +167,13 @@ body {
   width: 75px;
   border-radius: 0px 25px 25px 0px;
   border: none;
-  background-color: rgb(43, 141, 43);
+  background-color: #00bf63;
 
   color: aliceblue;
 
   font-family: "Quicksand";
+  font-size: 15px;
+  font-weight: 600;
 
   cursor: pointer;
 }
@@ -171,7 +197,19 @@ body {
 
 .detail-title {
   font-family: "Quicksand";
+  font-weight: 400;
+  font-size: 25px;
   text-align: center;
+}
+
+.detail-isbn {
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.detail-p {
+  margin-left: 25px;
+  font-size: 20px;
 }
 
 .detail-img {
@@ -179,8 +217,47 @@ body {
   margin: auto;
   width: 150px;
   height: 150px;
+
+  border-top: 2px solid #00bf63;
+  border-bottom: 2px solid #00bf63;
+
+  border-radius: 15px;
+
+  padding: 10px;
 }
 
 .selected {
-  border: 1px solid green;
+  border-top: 2px solid #00bf63;
+  border-bottom: 2px solid #00bf63;
+}
+
+.page-panel {
+  position: inherit;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.page-btn {
+  background-color: #00bf63;
+  border: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  margin: 10px;
+
+  color: aliceblue;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.2ms;
+}
+
+.page-text {
+  background-color: none;
+  border: none;
+  text-align: center;
+  width: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  font-size: 20px;
 }
