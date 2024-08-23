@@ -141,7 +141,6 @@ h2 {
 }
 
 .search-form {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   border-radius: 25px;
   margin: auto;
   width: 100%;
@@ -149,6 +148,7 @@ h2 {
 }
 
 .search-input {
+  top: 20px;
   height: 25px;
   width: 200px;
   border: none;
@@ -156,10 +156,16 @@ h2 {
   border-radius: 10px;
   text-align: center;
 
-  border-top: 2px solid #00bf63;
-  border-bottom: 2px solid #00bf63;
+  /* border-top: 2px solid #00bf63;
+  border-bottom: 2px solid #00bf63; */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 
   font-family: "Quicksand";
+
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .btn-search {
